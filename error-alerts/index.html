@@ -69,14 +69,77 @@ padding:5px 10px 5px 10px;
 
 <div class="container">
 
-<a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Download</a>
-<div class="modal fade" id="modal-id">
+<a class="btn btn-primary" id="show-modal" data-controls-modal="my-modal" data-backdrop="static" data-keyboard="false" data-toggle="modal" href='#my-modal'>Download</a>
+<div class="modal fade" id="my-modal">
     <div class="modal-dialog">
         <div class="modal-content cs-alert container">
-	<div class="cs-alert title">Error!!!<img class="float-right" data-dismiss="modal" src="close.png"></div>
+	<div class="cs-alert title">Error!!!<img class="float-right" src="close.png"></div>
 	<div class="cs-alert main">
                 <p>
                     <img src="warning.png" alt=""/>&nbsp; An error has occured
+                </p>
+                <div class="cs-footer">
+                    
+                    <button type="button" class="float-right" data-dismiss="modal">close</button>
+                    
+                </div>
+    </div>
+            <div class="modal-footer cs-alert footer">
+                <!--<button type="button" class="btn btn-danger" data-dismiss="modal">Ok</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="my-modal">
+    <div class="modal-dialog">
+        <div class="modal-content cs-alert container">
+	<div class="cs-alert title">Error!!!<img class="float-right" src="close.png"></div>
+	<div class="cs-alert main">
+                <p>
+                    <img src="warning.png" alt=""/>&nbsp; An error has occured
+                </p>
+                <div class="cs-footer">
+                    
+                    <button type="button" class="float-right" data-dismiss="modal">close</button>
+                    
+                </div>
+    </div>
+            <div class="modal-footer cs-alert footer">
+                <!--<button type="button" class="btn btn-danger" data-dismiss="modal">Ok</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="my-modal1">
+    <div class="modal-dialog">
+        <div class="modal-content cs-alert container">
+	<div class="cs-alert title">Error!!!<img class="float-right" src="close.png"></div>
+	<div class="cs-alert main">
+                <p>
+                    <img src="warning.png" alt=""/>&nbsp; One more error!!!
+                </p>
+                <div class="cs-footer">
+                    
+                    <button type="button" class="float-right" data-dismiss="modal">close</button>
+                    
+                </div>
+    </div>
+            <div class="modal-footer cs-alert footer">
+                <!--<button type="button" class="btn btn-danger" data-dismiss="modal">Ok</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="my-modal2">
+    <div class="modal-dialog">
+        <div class="modal-content cs-alert container">
+	<div class="cs-alert title">Error!!!<img class="float-right" src="close.png"></div>
+	<div class="cs-alert main">
+                <p>
+                    <img src="warning.png" alt=""/>&nbsp; Some thing wrong has happened.
                 </p>
                 <div class="cs-footer">
                     
@@ -97,5 +160,41 @@ padding:5px 10px 5px 10px;
         <script src="//code.jquery.com/jquery.js"></script>
         <!-- Bootstrap JavaScript -->
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $('div').click(function(){
+                //$('#my-modal').modal('hide');
+                //$('#my-modal').modal('show');
+            });
+            $('#show-modal').trigger('click');
+//    while(true){
+//         $('#my-modal').modal('show');
+//    }
+$('#myModal').on('hidden.bs.modal', function () {
+    // do something…
+    $('#my-modal1').modal('show');
+})
+   $('#my-modal1').on('hidden.bs.modal', function() {
+       $('#my-modal2').modal('show');
+   });
+   $('#my-modal2').on('hidden.bs.modal', function() {
+       $('#my-modal').modal('show');
+   });      
+   $('#my-modal').on('hidden.bs.modal', function () {
+  //window.alert('hidden event fired!');
+   $('#my-modal1').modal('show');
+});
+//    .on('hidden', function(){
+//        $('#my-modal').modal('show');
+//    })
+//    .on('show', function() {
+//        //
+//    })
+//    .on('shown', function(){
+//       //
+//    });
+        });
+
+        </script>
     </body>
 </html>
