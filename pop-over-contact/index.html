@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <style>
+        .icon_btn {
+            position: fixed;
+            padding: 8px 14px;
+            background: #84d3ef;
+            right: 0px;
+            top: 46%;
+            z-index: 10001;
+            color: #ffffff;
+            cursor: pointer;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            -moz-border-top-left-radius: 5px;
+            -moz-border-bottom-left-radius: 5px;
+            -webkit-border-top-left-radius: 5px;
+            -webkit-border-bottom-left-radius: 5px;
+        }
+        
+        .icon_btn:hover,
+        focus {
+            padding: 8px 14px;
+            background: #84d3ef;
+        }
+        
+        .icon_btn.active {
+            background: #84d3ef;
+            padding: 8px 14px;
+            opacity: 0.4;
+        }
+        
+        .floating_form {
+            width: 220px;
+            position: fixed;
+            right: -220px;
+            top: 52%;
+            z-index: 1000;
+            overflow: hidden;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        
+        .floating_form-open {
+            right: 0px;
+        }
+        
+        .floating_form h1 {
+            color: #000000;
+            padding: 0px 5px 6px 5px;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0px;
+            border-radius: 0px;
+            text-align: left;
+            text-transform: uppercase;
+            line-height: normal;
+        }
+        
+        .form_loatting {
+            border: 1px solid #d2d2d2;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .form_loatting input {
+            height: 30px;
+            border-radius: 0px;
+            margin-bottom: 10px;
+        }
+        
+        .form_loatting span {
+            font-size: 11px;
+            color: #FF0000;
+        }
+        
+        .form_loatting input[type="submit"] {
+            display: inline-block;
+            background-color: #84d3ef;
+            border-radius: 0px;
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            color: #FFFFFF;
+            font-size: 16px;
+            text-align: center;
+            transition: .4s all ease;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            text-shadow: none;
+            border: none;
+            width: 100%;
+        }
+        
+        .form_inner {
+            position: relative;
+        }
+        
+        .hide-form {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-center">Hello World</h1>
+    <div id="showRight" class="icon_btn"> <i class="fa fa-phone-square fa-3x" aria-hidden="true"></i> </div>
+
+    <section class="floating_form ng-scope floating_form-open" id="floating_form" style="">
+        <div class="form_inner">
+            <form name="callbackForm" novalidate="">
+                <!-- ngIf: !callback.successfulSubmit -->
+                <section>
+                    <div class="form_loatting">
+                        <h1>Book a consultation!</h1>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <input name="name" class="form-control" type="text" placeholder="Name" ng-model="callback.formData.name" required="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                                <!-- ngIf: callbackForm.name.$error.required&&callback.formData.dirty -->
+                            </div>
+                        </div>
+                        <div class="spacer-10px"></div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <input name="phone" class="form-control" placeholder="Phone" type="text" ng-model="callback.formData.phone" ng-pattern="/([0-9-+ ])$/" required="">
+                                <!-- ngIf: callbackForm.phone.$error.required&&callback.formData.dirty -->
+                                <!-- ngIf: callbackForm.phone.$error.pattern -->
+                            </div>
+                        </div>
+                        <div class="spacer-10px"></div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <input name="email" class="form-control" placeholder="Email" type="email" ng-model="callback.formData.email" required="">
+                                <!-- ngIf: callbackForm.email.$error.required&&callback.formData.dirty -->
+                                <!-- ngIf: callbackForm.email.$error.email -->
+                            </div>
+                        </div>
+                        <div class="spacer-10px"></div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="spacer-10px"></div>
+                                <div class="text-right">
+                                    <input type="submit" class="btn btn-lg btn-default ayur_btn" value="Submit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- end ngIf: !callback.successfulSubmit -->
+            </form>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.floating_form-open').addClass('hide-form');
+            $('.icon_btn').click(function() {
+                if ($('.floating_form-open').hasClass('hide-form')) {
+                    $('.floating_form-open').removeClass('hide-form');
+                } else {
+                    $('.floating_form-open').addClass('hide-form');
+                }
+            })
+        })
+    </script>
+
+</body>
+
+</html>
